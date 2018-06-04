@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Controllers.Base;
 using Controllers.DAL;
 using Modelos;
@@ -10,8 +11,10 @@ namespace Controllers
         private Contexto contexto = new Contexto();
         public void Adicionar(Usuario entity)
         {
+
             contexto.Usuarios.Add(entity);
             contexto.SaveChanges();
+
         }
 
         public Usuario BuscarPorID(int id)
@@ -29,14 +32,14 @@ namespace Controllers
             throw new System.NotImplementedException();
         }
 
-        public IList<Usuario> ListarPorNome()
+        public IList<Usuario> ListarPorNome(string nome)
         {
-            throw new System.NotImplementedException();
+            return contexto.Usuarios.Where(usu => usu.Nome == nome).ToList();
         }
 
         public IList<Usuario> ListarTodos()
         {
-            throw new System.NotImplementedException();
+            return contexto.Usuarios.ToList();
         }
     }
 }
