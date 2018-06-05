@@ -19,17 +19,25 @@ namespace Controllers
 
         public Usuario BuscarPorID(int id)
         {
-            throw new System.NotImplementedException();
+            return contexto.Usuarios.Find(id);
         }
 
         public void Editar(Usuario entity)
         {
-            throw new System.NotImplementedException();
+            contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
         }
 
         public void Excluir(int id)
         {
-            throw new System.NotImplementedException();
+            Usuario usu = BuscarPorID(id);
+            if (usu != null)
+            {
+               // contexto.Entry(usu).State = System.Data.Entity.EntityState.Deleted;
+
+                //2a forma
+                contexto.Usuarios.Remove(usu);
+            }
         }
 
         public IList<Usuario> ListarPorNome(string nome)

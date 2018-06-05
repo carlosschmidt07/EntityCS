@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfView"
+        mc:Ignorable="d"
+        Title="YUYUYU" Height="450" Width="800" Background="#FFC57736">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="536*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnTela" Content="Botao da tela" HorizontalAlignment="Left" Margin="95,74,0,0" VerticalAlignment="Top" Width="306" Grid.Column="2" Height="95" Background="#FF71BD31" Click="btnTela_Click"/>
+        <CheckBox x:Name="checkBoxTela" Content="CheckBox" Grid.Column="2" HorizontalAlignment="Left" Margin="95,193,0,0" VerticalAlignment="Top" Checked="checkBoxTela_Checked" Unchecked="checkBoxTela_Unchecked"/>
+        <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="218,193,0,0" VerticalAlignment="Top" Width="183"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="122,286,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="29" Width="112"/>
+        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="277,299,0,0" VerticalAlignment="Top" Height="31" Width="142"/>
+        <TextBox x:Name="txtNome" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="67,315,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnCarregaTela2" Content="Exibir Cadastro Usuario" Grid.Column="2" HorizontalAlignment="Left" Margin="362,286,0,0" VerticalAlignment="Top" Width="161" IsCancel="True" IsDefault="True" Click="btnCarregaTela2_Click" Height="29"/>
+
+    </Grid>
+</Window>
