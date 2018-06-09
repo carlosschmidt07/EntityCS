@@ -8,17 +8,19 @@
         Title="YUYUYU" Height="450" Width="800" Background="#FFC57736">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="97*"/>
-            <ColumnDefinition Width="159*"/>
-            <ColumnDefinition Width="536*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnTela" Content="Botao da tela" HorizontalAlignment="Left" Margin="95,74,0,0" VerticalAlignment="Top" Width="306" Grid.Column="2" Height="95" Background="#FF71BD31" Click="btnTela_Click"/>
-        <CheckBox x:Name="checkBoxTela" Content="CheckBox" Grid.Column="2" HorizontalAlignment="Left" Margin="95,193,0,0" VerticalAlignment="Top" Checked="checkBoxTela_Checked" Unchecked="checkBoxTela_Unchecked"/>
-        <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="218,193,0,0" VerticalAlignment="Top" Width="183"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="122,286,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="29" Width="112"/>
-        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="277,299,0,0" VerticalAlignment="Top" Height="31" Width="142"/>
-        <TextBox x:Name="txtNome" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="67,315,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnCarregaTela2" Content="Exibir Cadastro Usuario" Grid.Column="2" HorizontalAlignment="Left" Margin="362,286,0,0" VerticalAlignment="Top" Width="161" IsCancel="True" IsDefault="True" Click="btnCarregaTela2_Click" Height="29"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"  />
+            <RowDefinition Height="1*"  />
+        </Grid.RowDefinitions>
+        <Button x:Name="btnCancelar" Content="Cancelar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,264,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click"/>
+        <Button x:Name="btnSalvar" Content="Salvar" Grid.Column="1" HorizontalAlignment="Left" Margin="481,264,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnSalvar_Click"/>
+        <TextBox x:Name="txtNome" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="122,33,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nome:" Grid.Column="1" HorizontalAlignment="Left" Margin="59,33,0,0" Grid.Row="1" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

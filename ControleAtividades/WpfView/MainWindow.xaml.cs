@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers;
+using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,7 @@ namespace WpfView
         public MainWindow()
         {
             InitializeComponent();
-            txtNome.Text = "Olá Mundo";
+           
         }
 
         private void btnTela_Click(object sender, RoutedEventArgs e)
@@ -31,21 +33,45 @@ namespace WpfView
             MessageBox.Show("Vai  curintia");
         }
 
-        private void checkBoxTela_Checked(object sender, RoutedEventArgs e)
+        //private void checkBoxTela_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    btnTela.Visibility = Visibility.Hidden;
+        //}
+
+        //private void checkBoxTela_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    btnTela.Visibility = Visibility.Visible;
+        //}
+
+        //private void btnCarregaTela2_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CadastroUsuario cadUsu = new CadastroUsuario();
+        //    //cadUsu.Show();
+        //    cadUsu.ShowDialog();
+        //}
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            btnTela.Visibility = Visibility.Hidden;
+            this.Close();
         }
 
-        private void checkBoxTela_Unchecked(object sender, RoutedEventArgs e)
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            btnTela.Visibility = Visibility.Visible;
-        }
+            try
+            {
+                UsuariosController usuariosController = new UsuariosController();
+                Usuario usuario = new Usuario();
+                usuario.Nome = txtNome.Text;
+                usuariosController.Adicionar(usuario);
+                MessageBox.Show("Deu Boa");
+            }
+            catch (Exception ex)
+            {
 
-        private void btnCarregaTela2_Click(object sender, RoutedEventArgs e)
-        {
-            CadastroUsuario cadUsu = new CadastroUsuario();
-            //cadUsu.Show();
-            cadUsu.ShowDialog();
+                MessageBox.Show("Deu Ruim ("+ ex.Message +")");
+            }
+
+           
         }
     }
 }
